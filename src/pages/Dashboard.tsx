@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
+import Navigation from "@/components/Navigation";
 import { 
   Brain, 
   Moon, 
@@ -203,22 +204,33 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background py-8">
-      <div className="container mx-auto max-w-7xl px-4">
+    <div className="min-h-screen bg-background">
+      <Navigation />
+      <div className="container mx-auto max-w-7xl px-4 py-8">
         {/* Header */}
-        <div className="mb-8 flex items-center justify-between">
+        <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h1 className="mb-2 text-3xl font-bold text-foreground">Your Wellness Dashboard</h1>
             <p className="text-muted-foreground">Based on your recent assessment</p>
           </div>
-          <Button 
-            variant="outline" 
-            className="gap-2"
-            onClick={() => navigate("/assessment")}
-          >
-            <RefreshCw className="h-4 w-4" />
-            Retake Assessment
-          </Button>
+          <div className="flex gap-3">
+            <Button 
+              variant="outline" 
+              className="gap-2"
+              onClick={() => navigate("/patterns")}
+            >
+              <TrendingUp className="h-4 w-4" />
+              View Patterns
+            </Button>
+            <Button 
+              variant="outline" 
+              className="gap-2"
+              onClick={() => navigate("/assessment")}
+            >
+              <RefreshCw className="h-4 w-4" />
+              Retake Assessment
+            </Button>
+          </div>
         </div>
 
         {/* Overall Score Card */}
