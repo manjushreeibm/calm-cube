@@ -7,6 +7,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Slider } from "@/components/ui/slider";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-react";
+import Navigation from "@/components/Navigation";
 
 interface AssessmentData {
   mood: string;
@@ -251,8 +252,9 @@ const Assessment = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background py-8">
-      <div className="container mx-auto max-w-3xl px-4">
+    <div className="min-h-screen bg-background">
+      <Navigation />
+      <div className="container mx-auto max-w-3xl px-4 py-8">
         <Card className="p-8 shadow-medium">
           <div className="mb-8">
             <div className="mb-2 flex items-center justify-between text-sm text-muted-foreground">

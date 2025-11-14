@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 import { Heart, Brain, Activity, Coffee, Moon, Smile } from "lucide-react";
+import Navigation from "@/components/Navigation";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -13,24 +14,25 @@ const Index = () => {
       description: "Track your mood and get personalized tips for better mental health",
     },
     {
+      icon: Activity,
+      title: "Real-Time Monitoring",
+      description: "Log your focus, stress, and energy levels throughout the day",
+    },
+    {
       icon: Moon,
       title: "Sleep Tracking",
       description: "Understand your sleep patterns and improve rest quality",
     },
     {
-      icon: Activity,
-      title: "Stress Management",
-      description: "Learn stress-relief exercises tailored to your needs",
-    },
-    {
       icon: Coffee,
-      title: "Healthy Habits",
-      description: "Get reminders for hydration, breaks, and posture correction",
+      title: "Smart Recommendations",
+      description: "Get instant AI-powered advice based on your current state",
     },
   ];
 
   return (
     <div className="min-h-screen bg-background">
+      <Navigation />
       {/* Hero Section */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/5 to-background" />
@@ -49,25 +51,27 @@ const Index = () => {
             </h1>
             
             <p className="mb-10 text-lg text-muted-foreground md:text-xl">
-              Get personalized insights on your mood, sleep, stress levels, and daily habits. 
-              Receive AI-powered recommendations to improve your overall wellbeing.
+              Monitor your mood, focus, stress, and daily routines in real-time. 
+              Get instant AI-powered recommendations to optimize your mental health, productivity, and lifestyle.
             </p>
             
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button 
                 size="lg" 
                 className="group h-14 px-8 text-lg shadow-medium transition-all hover:scale-105 hover:shadow-lg"
-                onClick={() => navigate("/assessment")}
+                onClick={() => navigate("/monitor")}
               >
-                <Smile className="mr-2 h-5 w-5 transition-transform group-hover:rotate-12" />
-                Start Wellness Assessment
+                <Activity className="mr-2 h-5 w-5 transition-transform group-hover:rotate-12" />
+                Start Monitoring Now
               </Button>
               <Button 
                 size="lg" 
                 variant="outline" 
                 className="h-14 px-8 text-lg transition-all hover:scale-105"
+                onClick={() => navigate("/assessment")}
               >
-                Learn More
+                <Smile className="mr-2 h-5 w-5" />
+                Take Assessment
               </Button>
             </div>
           </div>
@@ -78,11 +82,11 @@ const Index = () => {
       <section className="container mx-auto px-4 py-20">
         <div className="mb-16 text-center">
           <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">
-            Comprehensive Wellness Support
+            Smart Behavior Monitoring System
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-            Our AI assistant analyzes multiple aspects of your health to provide 
-            personalized recommendations that work for you.
+            Track your mood, focus, stress, and daily routines in real-time. 
+            Our AI analyzes patterns and delivers instant recommendations for optimal wellbeing.
           </p>
         </div>
 
@@ -117,19 +121,29 @@ const Index = () => {
         <Card className="relative overflow-hidden border-0 bg-gradient-to-br from-primary to-secondary p-12 text-center shadow-medium">
           <div className="relative z-10">
             <h2 className="mb-4 text-3xl font-bold text-primary-foreground md:text-4xl">
-              Ready to Transform Your Wellbeing?
+              Ready to Optimize Your Lifestyle?
             </h2>
             <p className="mb-8 text-lg text-primary-foreground/90">
-              Take our comprehensive assessment and start your journey to better health today.
+              Start monitoring your behavior and receive instant AI-powered recommendations.
             </p>
-            <Button 
-              size="lg" 
-              variant="secondary"
-              className="h-14 px-8 text-lg shadow-lg transition-all hover:scale-105"
-              onClick={() => navigate("/assessment")}
-            >
-              Begin Your Assessment
-            </Button>
+            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <Button 
+                size="lg" 
+                variant="secondary"
+                className="h-14 px-8 text-lg shadow-lg transition-all hover:scale-105"
+                onClick={() => navigate("/monitor")}
+              >
+                Begin Monitoring
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline"
+                className="h-14 border-primary-foreground/20 bg-transparent px-8 text-lg text-primary-foreground hover:bg-primary-foreground/10"
+                onClick={() => navigate("/assessment")}
+              >
+                Take Full Assessment
+              </Button>
+            </div>
           </div>
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMC4xIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-20" />
         </Card>
